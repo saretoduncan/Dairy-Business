@@ -1,3 +1,5 @@
+let priceOfMilkPerLitre = 45; //price of milk/litre in ksh
+//start of shed infomations
 const production = [
   {
     shadeName: "shade A",
@@ -24,6 +26,7 @@ const production = [
     breed: "Simmental ",
   },
 ];
+//end of shed information
 /* --start of total milk production per shed function--*/
 const newObj = (obj) => {
   let all;
@@ -85,3 +88,12 @@ let weeklyProduction = (obj) => {
   return total * totalDaysWeekly;
 };
 //end of weekly milk production in all sheds function
+
+//start of monthly milk production in all sheds function
+let monthlyFunction = (obj, pr) => {
+  let total = totalMilkProduction(pr);
+  for (let values of Object.values(obj)) {
+    console.log(values * total);
+  }
+};
+monthlyFunction(monthsOfTheYear, production);
