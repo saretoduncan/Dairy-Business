@@ -72,7 +72,7 @@ const monthsOfTheYear = {
   March: 31,
   April: 30,
   May: 31,
-  june: 30,
+  June: 30,
   July: 31,
   August: 31,
   September: 30,
@@ -93,15 +93,16 @@ let weeklyProduction = (obj) => {
 //start of yearly milk production  in all sheds function
 let yearlyFunction = (obj, product) => {
   let total = totalMilkProduction(product);
-  let mult;
+  let multiplication;
   for (let values of Object.values(obj)) {
-    mult = values * total;
+    multiplication = values * total;
   }
-  return mult;
+  return multiplication;
 };
 
 //end of monthly milk production earnings in all sheds function
 
+//start of weekly and yearly income report
 let incomeOverTime = (selling_price, time) => {
   if (time == "weekly") {
     console.log(
@@ -118,4 +119,15 @@ let incomeOverTime = (selling_price, time) => {
   }
 };
 incomeOverTime(priceOfMilkPerLitre, "weekly");
+incomeOverTime(priceOfMilkPerLitre, "yearly");
+//end of weekly and yearly income report
 //start of monthly  milk production earnings report
+let monthEarnings = (selling_price, month, product) => {
+  let total = totalMilkProduction(product);
+  let multiplication;
+  for (let [keys, values] of Object.entries(month)) {
+    multiplication = values * total * selling_price;
+    console.log(`Your income for ${keys} is ksh ${multiplication}`);
+  }
+};
+monthEarnings(priceOfMilkPerLitre, monthsOfTheYear, production);
