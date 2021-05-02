@@ -87,13 +87,16 @@ let weeklyProduction = (obj) => {
 
   return total * totalDaysWeekly;
 };
+
 //end of weekly milk production in all sheds function
 
 //start of monthly milk production in all sheds function
-let monthlyFunction = (obj, pr) => {
+let monthlyFunction = (obj, pr, price) => {
   let total = totalMilkProduction(pr);
-  for (let values of Object.values(obj)) {
-    console.log(values * total);
+  let mult;
+  for (let [keys, values] of Object.entries(obj)) {
+    mult = values * total * price;
+    console.log(`Your income for ${keys} is ksh ${mult}`);
   }
 };
-monthlyFunction(monthsOfTheYear, production);
+monthlyFunction(monthsOfTheYear, production, priceOfMilkPerLitre);
