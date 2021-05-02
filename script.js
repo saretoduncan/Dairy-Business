@@ -90,13 +90,32 @@ let weeklyProduction = (obj) => {
 
 //end of weekly milk production in all sheds function
 
-//start of monthly milk production in all sheds function
-let monthlyFunction = (obj, pr, price) => {
-  let total = totalMilkProduction(pr);
+//start of yearly milk production  in all sheds function
+let yearlyFunction = (obj, product) => {
+  let total = totalMilkProduction(product);
   let mult;
-  for (let [keys, values] of Object.entries(obj)) {
-    mult = values * total * price;
-    console.log(`Your income for ${keys} is ksh ${mult}`);
+  for (let values of Object.values(obj)) {
+    mult = values * total;
+  }
+  return mult;
+};
+
+//end of monthly milk production earnings in all sheds function
+
+let incomeOverTime = (selling_price, time) => {
+  if (time == "weekly") {
+    console.log(
+      `Your weekly income will be Ksh ${
+        weeklyProduction(production) * selling_price
+      }`
+    );
+  } else if ("yearly") {
+    console.log(
+      `Your yearly income will be Ksh ${
+        yearlyFunction(monthsOfTheYear, production) * selling_price
+      }`
+    );
   }
 };
-monthlyFunction(monthsOfTheYear, production, priceOfMilkPerLitre);
+incomeOverTime(priceOfMilkPerLitre, "weekly");
+//start of monthly  milk production earnings report
