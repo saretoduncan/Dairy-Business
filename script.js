@@ -1,6 +1,6 @@
 let priceOfMilkPerLitre = 45; //price of milk/litre in ksh
 //start of shed infomations
-const production = [
+const sheds = [
   {
     shadeName: "shade A",
     dailyProductionPerCow: 10,
@@ -39,7 +39,7 @@ const newObj = (obj) => {
   }
   return all;
 };
-newObj(production);
+newObj(sheds);
 /* --end of total milk per shed function--*/
 /* --start of total milk production in all sheds---*/
 const totalMilkProduction = (obj) => {
@@ -63,10 +63,10 @@ const totalProduction = (obj) => {
   const total = totalMilkProduction(obj);
   console.log(`The total production is ${total} litres per day`);
 };
-totalProduction(production);
+totalProduction(sheds);
 /* --end of total milk production report function---*/
 const monthsOfTheYear = {
-  // months and number of days of a year
+  // months and number of days of the year
   January: 31,
   February: 29,
   March: 31,
@@ -107,13 +107,13 @@ let incomeOverTime = (selling_price, time) => {
   if (time == "weekly") {
     console.log(
       `Your weekly income will be Ksh ${
-        weeklyProduction(production) * selling_price
+        weeklyProduction(sheds) * selling_price
       }`
     );
   } else if ("yearly") {
     console.log(
       `Your yearly income will be Ksh ${
-        yearlyFunction(monthsOfTheYear, production) * selling_price
+        yearlyFunction(monthsOfTheYear, sheds) * selling_price
       }`
     );
   }
@@ -130,4 +130,4 @@ let monthEarnings = (selling_price, month, product) => {
     console.log(`Your income for ${keys} is ksh ${multiplication}`);
   }
 };
-monthEarnings(priceOfMilkPerLitre, monthsOfTheYear, production);
+monthEarnings(priceOfMilkPerLitre, monthsOfTheYear, sheds);
