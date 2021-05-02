@@ -25,3 +25,14 @@ const production = [{
         breed: 'Simmental ',
     },
 ];
+/*--start of total milk production per shed function--*/
+const newObj = (obj) => {
+    let all;
+    for (let i = 0; i < obj.length; i++) {
+        obj[i].allCowProduction = obj[i].dailyProductionPerCow * obj[i].numberOfCows;
+        all = obj[i].allCowProduction; /*   total milk production by all cows per shed; */
+    }
+    return all;
+};
+newObj(production);
+/*--end of total milk per shed function--*/
