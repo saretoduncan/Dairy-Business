@@ -36,21 +36,26 @@ const newObj = (obj) => {
 };
 newObj(production);
 /*--end of total milk per shed function--*/
-/*--start of total milk production---*/
+/*--start of total milk production in all sheds---*/
 let totalMilkProduction = (obj) => {
     let sum = 0;
     obj.forEach((obj) => {
 
         sum += obj.allCowProduction;
     });
-    console.log(sum);
+    return sum;
 };
 
-/*--start of total milk production---*/
+/*--end of total milk production in all sheds---*/
 
-// let totalProduction = (obj) => {
-//     obj.forEach((obj) => {
-//         console.log(`Your production in Shed ${obj.allCowProduction} litres per day `);
-//     });
-// };
-// totalProduction(production);
+/*--start of total milk production report function---*/
+
+let totalProduction = (obj) => {
+    obj.forEach((obj) => {
+        console.log(`Your production in Shed ${obj.allCowProduction} litres per day `);
+    });
+    let total = totalMilkProduction(obj);
+    console.log(`The total production is ${total} litres per day`);
+};
+totalProduction(production);
+/*--end of total milk production report function---*/
