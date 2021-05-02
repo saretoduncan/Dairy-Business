@@ -25,7 +25,7 @@ const production = [{
         breed: 'Simmental ',
     },
 ];
-/*--start of total milk production per shed function--*/
+/* --start of total milk production per shed function--*/
 const newObj = (obj) => {
     let all;
     for (let i = 0; i < obj.length; i++) {
@@ -35,27 +35,41 @@ const newObj = (obj) => {
     return all;
 };
 newObj(production);
-/*--end of total milk per shed function--*/
-/*--start of total milk production in all sheds---*/
-let totalMilkProduction = (obj) => {
+/* --end of total milk per shed function--*/
+/* --start of total milk production in all sheds---*/
+const totalMilkProduction = (obj) => {
     let sum = 0;
     obj.forEach((obj) => {
-
         sum += obj.allCowProduction;
     });
     return sum;
 };
 
-/*--end of total milk production in all sheds---*/
+/* --end of total milk production in all sheds---*/
 
-/*--start of total milk production report function---*/
+/* --start of total milk production report function---*/
 
-let totalProduction = (obj) => {
+const totalProduction = (obj) => {
     obj.forEach((obj) => {
         console.log(`Your production in Shed ${obj.allCowProduction} litres per day `);
     });
-    let total = totalMilkProduction(obj);
+    const total = totalMilkProduction(obj);
     console.log(`The total production is ${total} litres per day`);
 };
 totalProduction(production);
-/*--end of total milk production report function---*/
+/* --end of total milk production report function---*/
+const monthsOfTheYear = {
+    January: 31,
+    February: 29,
+    March: 31,
+    April: 30,
+    May: 31,
+    june: 30,
+    July: 31,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31,
+
+};
