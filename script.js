@@ -63,6 +63,7 @@ const totalProduction = (obj) => {
 totalProduction(production);
 /* --end of total milk production report function---*/
 const monthsOfTheYear = {
+  // months and number of days of a year
   January: 31,
   February: 29,
   March: 31,
@@ -76,3 +77,11 @@ const monthsOfTheYear = {
   November: 30,
   December: 31,
 };
+//start of weekly milk production in all sheds function
+let weeklyProduction = (obj) => {
+  let total = totalMilkProduction(obj);
+  let totalDaysWeekly = 7;
+
+  return total * totalDaysWeekly;
+};
+//end of weekly milk production in all sheds function
