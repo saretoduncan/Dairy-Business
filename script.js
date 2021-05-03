@@ -57,7 +57,7 @@ const totalMilkProduction = (obj) => {
 const totalProduction = (obj) => {
   obj.forEach((obj) => {
     console.log(
-      `Your production in Shed ${obj.allCowProduction} litres per day `
+      `Your production in Shed ${obj.shadeName} ${obj.allCowProduction} litres per day `
     );
   });
   const total = totalMilkProduction(obj);
