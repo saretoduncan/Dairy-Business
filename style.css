@@ -2,14 +2,15 @@
     padding:0;
     margin:0;
 }
+.header{
+    height:100vh;
+}
 
 .menu-flex{
     display:flex;
 }
 .title {
-    position:relative;
-    
-    justify-content: center;  
-    
+      
+    justify-content: center;      
 
 }

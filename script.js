@@ -130,4 +130,4 @@ let monthEarnings = (selling_price, month, product) => {
     console.log(`Your income for ${keys} is ksh ${multiplication}`);
   }
 };
-monthEarnings(priceOfMilkPerLitre, monthsOfTheYear, sheds);
+monthEarnings(priceOfMilkPerLitre, monthsOfTheYear, sheds); //monthEarnings report
