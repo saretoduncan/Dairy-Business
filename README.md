@@ -2,11 +2,6 @@
 
 > Site emphasizing utilizing of javascript functionality in running a program that monitors and generates reports on milk sales.
 
-<!--->
-
-![screenshot](./images/Screenshoot.png)
-<-->
-
 ## Built With
 
 - HTML
