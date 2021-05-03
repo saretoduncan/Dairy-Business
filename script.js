@@ -32,7 +32,7 @@ const newObj = (obj) => {
   let all;
   for (let i = 0; i < obj.length; i++) {
     obj[i].allCowProduction =
-      obj[i].dailyProductionPerCow * obj[i].numberOfCows;
+      obj[i].dailyProductionPerCow * obj[i].numberOfCows; //  new object with total milk production per shed
     all =
       obj[i]
         .allCowProduction; /*   total milk production by all cows per shed; */
@@ -63,7 +63,7 @@ const totalProduction = (obj) => {
   const total = totalMilkProduction(obj);
   console.log(`The total production is ${total} litres per day`);
 };
-totalProduction(sheds);
+totalProduction(sheds); //
 /* --end of total milk production report function---*/
 const monthsOfTheYear = {
   // months and number of days of the year
